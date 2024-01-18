@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        int a = 2;
+        double start = 43.3;
 
+        System.out.println(a + start);
     }
 }

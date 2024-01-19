@@ -9,7 +9,7 @@ public class Main {
         int chose = sc.nextInt();
 
         while (chose != 0) {
-            if (chose == 1) {
+            if (chose == 1) {   //Здесь вводится количество шагов пройденных за день
                 System.out.println("Введите номер месяца от 1 до 12");
                 int month = sc.nextInt();
                 while (month > 12 || month < 1) {
@@ -33,7 +33,7 @@ public class Main {
 
                 myTracker.saveProgress(month, day, steps);
                 System.out.println("Прогресс сохранен.");
-            } else if (chose == 2) {
+            } else if (chose == 2) {  //здесь выводится количество шагов за день
                 System.out.println("Введите номер месяца от 1 до 12");
                 int month = sc.nextInt();
                 while (month > 12 || month < 1) {
@@ -48,8 +48,26 @@ public class Main {
                     day = sc.nextInt();
                 }
 
-                myTracker.printData(day, month);
+                myTracker.printDataStepsPerDay(day, month);
 
+            } else if (chose == 3) {
+                System.out.println("Введите номер месяца от 1 до 12");
+                int month = sc.nextInt();
+                while (month > 12 || month < 1) {
+                    System.out.println("Нету такого месяца. Попробуйте еще!");
+                    month = sc.nextInt();
+                }
+
+                myTracker.printAllStepsPerMonth(month);
+            } else if (chose == 4) {
+                System.out.println("Введите номер месяца от 1 до 12");
+                int month = sc.nextInt();
+                while (month > 12 || month < 1) {
+                    System.out.println("Нету такого месяца. Попробуйте еще!");
+                    month = sc.nextInt();
+                }
+
+                myTracker.printStatisticPerMonth(month);
             }
             printMenu();
             chose = sc.nextInt();
@@ -60,6 +78,9 @@ public class Main {
     public static void printMenu() {
         System.out.println("Выберите нужную команду.");
         System.out.println("1 - Записать результат.");
-        System.out.println("2 - Вывод прогресса");
+        System.out.println("2 - Количество шагов за день");
+        System.out.println("3 - Количество шагов за месяц");
+        System.out.println("4 - Статистика за месяц");
+        System.out.println("0 - Выход");
     }
 }
